@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFFCF2" />
+  <title>404 — Page Not Found | Aniket</title>
+
+  <!-- Favicons (Generated from Favicon.io) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- Simplified base path fix for GitHub Pages -->
+  <script>
+  (function () {
+    if (window.location.hostname.includes('github.io')) {
+      var parts = location.pathname.split("/").filter(Boolean);
+      if (parts.length > 0) {
+        var base = document.createElement("base");
+        base.href = "/" + parts[0] + "/";
+        document.head.appendChild(base);
+      }
+    }
+  })();
+  </script>
+
+  <link rel="stylesheet" href="css/style1.css" />
+  <link rel="stylesheet" href="css/style2.css" />
+</head>
+<body>
+
+  <div class="page-loader" id="page-loader" role="status" aria-live="polite">
+    <div class="loader-ring" aria-hidden="true"></div>
+    <p class="loader-text">Loading</p>
+  </div>
+
+  <div class="ambient-glow glow-orange"></div>
+  <div class="ambient-glow glow-lilac"></div>
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <div class="header-wrapper" id="header-wrapper">
+    <header class="site-header">
+      <a href="index.html" class="logo">Ani<span>ket</span></a>
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="html/about.html">About</a>
+        <a href="html/skills.html">Skills</a>
+        <a href="html/projects.html">Projects</a>
+        <a href="html/contact.html">Contact</a>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="settings-wrapper">
+          <button class="theme-toggle" id="settings-btn" aria-label="Open Settings" aria-expanded="false">
+            <svg class="icon icon-gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </button>
+          <div class="settings-menu" id="settings-menu">
+            <div class="settings-page active" id="settings-page-main">
+              <button class="settings-item" id="theme-toggle" aria-label="Toggle Theme">
+                <span>Theme</span>
+                <div class="settings-icon-wrapper">
+                  <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                  <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                </div>
+              </button>
+              <button class="settings-item" id="music-toggle" aria-label="Toggle Background Music">
+                <span>Music</span>
+                <div class="settings-icon-wrapper">
+                  <svg class="icon icon-music-on" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                  <svg class="icon icon-music-off" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+                </div>
+              </button>
+              <button class="settings-item settings-nav-btn" id="go-to-music-settings" aria-label="Open Music Settings">
+                <span>Music Settings</span>
+                <div class="settings-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg></div>
+              </button>
+            </div>
+            <div class="settings-page" id="settings-page-audio">
+              <button class="settings-item settings-nav-btn" id="go-back-settings" aria-label="Back to Main Settings">
+                <div class="settings-icon-wrapper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg></div>
+                <span>Back</span>
+              </button>
+              <div class="settings-divider"></div>
+              <div class="settings-group">
+                <span class="settings-label">Track</span>
+                <div class="track-selector">
+                  <button class="track-btn active" data-track="1">BGM 1</button>
+                  <button class="track-btn" data-track="2">BGM 2</button>
+                  <button class="track-btn" data-track="3">BGM 3</button>
+                </div>
+              </div>
+              <div class="settings-group">
+                <div class="settings-label-row">
+                  <span class="settings-label">Volume</span>
+                  <span id="volume-value">50%</span>
+                </div>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.5">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+          <svg class="icon icon-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6"  x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="error-page">
+    <p class="error-code" data-cursor="spotlight">404</p>
+    <h1 class="error-title">Page not found</h1>
+    <p class="error-text">
+      The page you're looking for doesn't exist, has moved, or is taking a nap somewhere else. Let's get you back home.
+    </p>
+    <a href="index.html" class="btn btn-primary">Back to Home</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Ani<span>ket</span></a>
+        <p>Student · Programmer. Building clean, thoughtful digital experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="html/about.html">About Me</a>
+        <a href="html/projects.html">Projects</a>
+        <a href="html/contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="https://github.com/codeforfun-32" target="_blank">GitHub</a>
+        <a href="https://www.instagram.com/just.aniket_911" target="_blank">Instagram</a>
+        <a href="https://x.com/just_Aniket-911" target="_blank">Twitter / X</a>
+        <a href="mailto:32aniket@gmail.com">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Aniket. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AI CHAT WIDGET -->
+  <button class="ai-chat-btn" id="ai-chat-btn" aria-label="Open AI Assistant">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </button>
+
+  <div class="ai-chat-window" id="ai-chat-window">
+    <div class="ai-chat-header">
+      <div class="ai-chat-title">
+        <div class="ai-chat-avatar">AI</div>
+        <span>Aniket's Assistant</span>
+        <span class="ai-status-dot" id="ai-status-dot" title="Online"></span>
+      </div>
+      <button class="ai-chat-close" id="ai-chat-close">&times;</button>
+    </div>
+    
+    <div class="ai-chat-messages" id="ai-chat-messages">
+      <div class="ai-msg ai">
+        Hi! I'm Aniket's AI assistant. Ask me anything about his skills, projects, or background!
+      </div>
+    </div>
+    
+    <div class="ai-chat-input-area">
+      <input type="text" id="ai-chat-input" placeholder="Ask a question..." autocomplete="off">
+      <button id="ai-chat-send">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to Top" title="Back to Top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <!-- BACKGROUND MUSIC ELEMENT -->
+  <audio id="bg-music" loop preload="auto"></audio>
+
+  <script src="js/script1.js"></script>
+  <script src="js/script3.js"></script>
+</body>
+</html>
